@@ -1,5 +1,7 @@
 package io.github.andylke.demo.echo;
 
+import java.time.LocalDateTime;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,11 +13,11 @@ public class EchoRestController {
 
   @GetMapping
   public String getEcho(@RequestParam String message) {
-    return message;
+    return String.format("%tT: %s", LocalDateTime.now(), message);
   }
 
   @PostMapping
   public String postEcho(@RequestBody String message) {
-    return message;
+    return String.format("%tT: %s", LocalDateTime.now(), message);
   }
 }
