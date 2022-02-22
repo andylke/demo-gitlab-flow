@@ -13,11 +13,11 @@ public class EchoRestController {
 
   @GetMapping
   public String getEcho(@RequestParam String message) {
-    return String.format("%tT: %s", LocalDateTime.now(), message);
+    return String.format("%s: %s", LocalDateTime.now(), message);
   }
 
   @PostMapping
   public String postEcho(@RequestBody String message) {
-    return String.format("%tT: %s", LocalDateTime.now(), message);
+    return String.format("%s: %s", LocalDateTime.now(), message);
   }
 }
